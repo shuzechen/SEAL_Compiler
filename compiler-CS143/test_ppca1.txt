@@ -1,0 +1,7 @@
+main:
+    addi a0,a0,0
+    ld a0,-90(s0)
+    sd t0,-24(s0)
+	ld t0,-24(s0)
+	mv a1,t0
+    

@@ -1,0 +1,7 @@
+var a Int;
+var b Int;
+var c[100] Array of Int;
+input a,b,c[0];
+print "%lld and %lld and %lld\n",a,b,c[0];
+
+// ans : depend on the input

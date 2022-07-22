@@ -1,0 +1,27 @@
+var a Int;
+a = 33;
+if a > 10{
+    a = 15;
+}else {
+    a = 9;
+}
+print "%lld\n", a;
+while a <= 60 {
+    a = a+2;
+    if a > 33 {break;}
+}
+print "%lld\n", a;
+for ;; {if a<= 70{
+    a = a * 2;
+    continue;
+}
+break;}
+print "%lld\n", a;
+retrun 0;
+
+/*
+* ans :
+15
+35
+140
+*/

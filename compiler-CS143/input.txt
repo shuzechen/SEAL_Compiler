@@ -1,0 +1,36 @@
+//selection sort
+var a Int;
+var b Int;
+var min Int;
+var t[6] Array of Int;
+t[0] = 1;
+t[1] = 45;
+t[2] = 45136;
+t[3] = -325135;
+t[4] = -43261461345;
+t[5] = 10000000;
+
+for a = 0; a <= 5; a = a+1{
+    min = t[a];
+    for b = a+1; b <= 5; b = b+1{
+
+    if t[b] < min {
+        var temp Int;
+        
+        temp = t[a];
+        t[a] = t[b];
+        t[b] = temp;
+        min = t[a];
+
+    }
+    
+    }
+}
+print "%lld %lld %lld %lld %lld %lld\n", t[0], t[1], t[2], t[3], t[4], t[5];
+return 0;
+
+
+/*
+* ans :
+    -43261461345 -325135 1 45 45136 10000000
+*/

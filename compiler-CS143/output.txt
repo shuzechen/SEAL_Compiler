@@ -1,0 +1,36 @@
+	.text
+	.section	.rodata
+.LC0:
+	.string "%lld\n"
+	.text
+	.globl	main
+	.type	main, @function
+main:
+	addi	sp,sp,-192
+	sd  ra, 184(sp)
+	sd  s0, 176(sp)
+	addi	s0,sp,192
+	li t0,3
+	sd t0,-104(s0)
+	li t0,1
+	sd t0,-24(s0)
+	ld t0,-104(s0)
+	addi	t0,t0,-4
+	sd t1,-24(s0)
+	ld t1,-24(s0)
+	mul t0,t0,t1
+	ld t3,-24(s0)
+	addi	t3,t3,-3
+	li t2,3
+	div t2,t2,t3
+	li t1,7
+	mul t1,t1,t2
+	sub t0,t0,t1
+	sd t0,-24(s0)
+	mv a1,t0
+	lla a0,.LC0
+	call	printf@plt
+	li a0,10
+	ld  ra, 184(sp)
+	ld  s0, 176(sp)
+	addi	sp,sp,192

@@ -1,0 +1,26 @@
+var a Int;
+var b Int;
+var c[100] Array of Int;
+var d Bool;
+var e[123] Array of String;
+e[0] = "test point 1;";
+a = b = c[10] = 0xA;
+
+if !(a!= 10) {a = (a+a);
+
+    while b <= 300{
+        b = b*c[10];
+        for c[9] = 99; c[10] <= 100; c[10] = c[10] * 10{
+            c[9] = c[10] & (b - c[10]) * a;
+            // Notice that SEAL precedence is different from that of C
+        }
+        print "%s goes with %lld\n", e[0], c[9];
+    }
+}
+return 1234567;
+
+/*
+* ans :
+test point 1; goes with 0
+test point 1; goes with 99
+*/

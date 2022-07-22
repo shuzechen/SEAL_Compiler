@@ -1,0 +1,105 @@
+	.text
+	.section	.rodata
+.LC0:
+	.string "%lld %lld %lld %lld %lld %lld\n"
+	.text
+	.globl	main
+	.type	main, @function
+main:
+	addi	sp,sp,-88
+	sd  ra, 80(sp)
+	sd  s0, 72(sp)
+	addi	s0,sp,88
+	li t0,1
+	sd t0,-88(s0)
+	li t0,45
+	sd t0,-80(s0)
+	li t0,45136
+	sd t0,-72(s0)
+	li t0,-325135
+	sd t0,-64(s0)
+	li t0,-43261461345
+	sd t0,-56(s0)
+	li t0,10000000
+	sd t0,-48(s0)
+	li t0,0
+	sd t0,-24(s0)
+.L2:
+	ld t0,-24(s0)
+	li t1,5
+	bgt t0,t1,.L3
+	ld t0,-24(s0)
+	slli t0,t0,3
+	add a0,s0,t0
+	ld t0,-88(a0)
+	sd t0,-40(s0)
+	ld t0,-24(s0)
+	addi	t0,t0,1
+	sd t0,-32(s0)
+.L4:
+	ld t0,-32(s0)
+	li t1,5
+	bgt t0,t1,.L5
+	ld t0,-32(s0)
+	slli t0,t0,3
+	add a0,s0,t0
+	ld t0,-88(a0)
+	ld t1,-40(s0)
+	bge t0,t1,.L6
+	addi	sp,sp,-8
+	ld t0,-24(s0)
+	slli t0,t0,3
+	add a0,s0,t0
+	ld t0,-88(a0)
+	sd t0,-96(s0)
+	ld t0,-32(s0)
+	slli t0,t0,3
+	add a0,s0,t0
+	ld t0,-88(a0)
+	ld t1,-24(s0)
+	slli t1,t1,3
+	add a0,s0,t1
+	sd t0,-88(a0)
+	ld t0,-96(s0)
+	ld t1,-32(s0)
+	slli t1,t1,3
+	add a0,s0,t1
+	sd t0,-88(a0)
+	ld t0,-24(s0)
+	slli t0,t0,3
+	add a0,s0,t0
+	ld t0,-88(a0)
+	sd t0,-40(s0)
+	addi	sp,sp,8
+	j  .L7
+.L6:
+.L7:
+	ld t0,-32(s0)
+	addi	t0,t0,1
+	sd t0,-32(s0)
+	j  .L4
+.L5:
+	ld t0,-24(s0)
+	addi	t0,t0,1
+	sd t0,-24(s0)
+	j  .L2
+.L3:
+	ld t0,-48(s0)
+	mv a6,t0
+	ld t0,-56(s0)
+	mv a5,t0
+	ld t0,-64(s0)
+	mv a4,t0
+	ld t0,-72(s0)
+	mv a3,t0
+	ld t0,-80(s0)
+	mv a2,t0
+	ld t0,-88(s0)
+	mv a1,t0
+	lla a0,.LC0
+	call	printf@plt
+	li a0,0
+	ld  ra, 80(sp)
+	ld  s0, 72(sp)
+	addi	sp,sp,88
+	jr ra
